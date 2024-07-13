@@ -1,4 +1,4 @@
-package com.renan.hrworker.entities;
+package com.renan.hrworker.DTO;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -13,11 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Worker {
+public class WorkerRequest {
 	
-	private Long id;
 	private String name;
-	private String address;
 	private Double dailyIncome;
 
 }
