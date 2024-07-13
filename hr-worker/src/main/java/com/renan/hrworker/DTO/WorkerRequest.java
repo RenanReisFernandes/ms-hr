@@ -16,6 +16,7 @@ import lombok.Setter;
 public class WorkerRequest {
 	
 	private String name;
+	private String address;
 	private Double dailyIncome;
 
 }
