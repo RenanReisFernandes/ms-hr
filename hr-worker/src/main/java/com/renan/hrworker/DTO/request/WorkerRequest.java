@@ -17,6 +17,7 @@ public class WorkerRequest {
 	
 	private String name;
 	private String address;
+	private String cpf;
 	private Double dailyIncome;
 
 }

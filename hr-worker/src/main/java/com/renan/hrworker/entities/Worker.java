@@ -18,6 +18,7 @@ public class Worker {
 	private Long id;
 	private Long agency;
 	private Long account;
+	private String cpf;
 	private String name;
 	private String address;
 	private Double dailyIncome;
