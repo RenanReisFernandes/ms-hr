@@ -22,7 +22,7 @@ import com.renan.hrworker.entities.Worker;
 import com.renan.hrworker.services.WorkerService;
 
 @RestController
-@RequestMapping("/worker")
+@RequestMapping(value ="/worker")
 public class WorkerController {
 	
 	@Autowired
