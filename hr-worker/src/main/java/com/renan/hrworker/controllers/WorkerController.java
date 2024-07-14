@@ -47,16 +47,24 @@ public class WorkerController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Worker>> findById(@PathVariable Long id){
+	public ResponseEntity<WorkerResponse> findById(@PathVariable Long id){
 		Optional<Worker> worker = service.findById(id);
-		return ResponseEntity.status(HttpStatus.FOUND).body(worker);
+		if(worker.isPresent()) {
+			WorkerResponse workerResponse = mapper.toWorkerResponse(worker.get());
+			return ResponseEntity.status(HttpStatus.FOUND).body(workerResponse);
+		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+		
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Worker> update(@RequestBody Worker workerUpdated, @PathVariable Long id){
+	public ResponseEntity<WorkerResponse> update(@RequestBody WorkerRequest workerUpdated, @PathVariable Long id){
 		try {
-		Worker worker = service.update(workerUpdated, id);
-		return ResponseEntity.status(HttpStatus.OK).body(worker);
+			Worker toWorker = mapper.toWorker(workerUpdated);
+		Worker worker = service.update(toWorker, id);
+		WorkerResponse toResponse = mapper.toWorkerResponse(worker);
+		return ResponseEntity.status(HttpStatus.OK).body(toResponse);
 		}
 		catch (Exception e) {
 			return ResponseEntity.noContent().build();
