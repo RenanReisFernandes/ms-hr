@@ -17,6 +17,7 @@ public class WorkerResponse {
 	
 	private Long id;
 	private String name;
+	private String cpf;
 	private String address;
 	private Double dailyIncome;
 }
