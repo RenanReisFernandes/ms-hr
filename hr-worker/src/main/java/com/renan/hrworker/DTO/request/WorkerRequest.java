@@ -1,4 +1,4 @@
-/*
+
 package com.renan.hrworker.DTO.request;
 
 import jakarta.persistence.Entity;
@@ -23,4 +23,3 @@ public class WorkerRequest {
 
 }
 
-*/
