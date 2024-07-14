@@ -1,6 +1,8 @@
 
 package com.renan.hrworker.DTO.response;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,7 +15,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class WorkerResponse {
+public class WorkerResponse implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;

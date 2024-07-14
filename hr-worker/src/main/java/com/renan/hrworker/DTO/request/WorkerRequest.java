@@ -1,6 +1,8 @@
 
 package com.renan.hrworker.DTO.request;
 
+import java.io.Serializable;
+
 import org.hibernate.validator.constraints.br.CPF;
 
 import io.micrometer.common.lang.NonNull;
@@ -17,7 +19,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class WorkerRequest {
+public class WorkerRequest implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
 	private String name;

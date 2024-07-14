@@ -1,5 +1,7 @@
 package com.renan.hrworker.entities;
 
+import java.io.Serializable;
+
 import org.hibernate.annotations.GeneratorType;
 
 import jakarta.persistence.Entity;
@@ -20,7 +22,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Table(name = "workers")
-public class Worker {
+public class Worker implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
