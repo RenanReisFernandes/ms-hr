@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.renan.hrworker.DTO.request.WorkerRequest;
+import com.renan.hrworker.DTO.response.WorkerResponse;
+import com.renan.hrworker.config.WorkerMapper;
 import com.renan.hrworker.entities.Worker;
 import com.renan.hrworker.services.WorkerService;
 
@@ -25,16 +28,22 @@ public class WorkerController {
 	@Autowired
 	private WorkerService service;
 	
+	@Autowired
+	private  WorkerMapper mapper;
+	
 	@PostMapping
-	public ResponseEntity<Worker> save(@RequestBody Worker worker){
+	public ResponseEntity<WorkerResponse> save(@RequestBody WorkerRequest workerRequest){
+		Worker worker = mapper.toWorker(workerRequest);
 		Worker workerSaved = service.save(worker);
-		return ResponseEntity.status(HttpStatus.CREATED).body(workerSaved);
+		WorkerResponse workerResponse = mapper.toWorkerResponse(workerSaved);
+		return ResponseEntity.status(HttpStatus.CREATED).body(workerResponse);
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Worker>> findAll(){
+	public ResponseEntity<List<WorkerResponse>> findAll(){
 		List<Worker> list = service.findAll();
-		return ResponseEntity.status(HttpStatus.FOUND).body(list);
+		List<WorkerResponse> listResponse = mapper.toWorkerResponseList(list);
+		return ResponseEntity.status(HttpStatus.FOUND).body(listResponse);
 	}
 	
 	@GetMapping("/{id}")
