@@ -1,3 +1,4 @@
+/*
 package com.renan.hrworker.DTO.response;
 
 import jakarta.persistence.Entity;
@@ -21,3 +22,5 @@ public class WorkerResponse {
 	private String address;
 	private Double dailyIncome;
 }
+
+*/
