@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 import com.renan.hrworker.entities.Worker;
 import com.renan.hrworker.repositories.WorkerRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
+@Transactional
 public class WorkerService {
 	@Autowired
 	private WorkerRepository repository;
