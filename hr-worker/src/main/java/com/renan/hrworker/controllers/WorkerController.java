@@ -3,6 +3,7 @@ package com.renan.hrworker.controllers;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,14 @@ import com.renan.hrworker.config.WorkerMapper;
 import com.renan.hrworker.entities.Worker;
 import com.renan.hrworker.services.WorkerService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping(value ="/worker")
+@Tag(name = "API WORKER")
 public class WorkerController {
 	
 	@Autowired
@@ -31,6 +38,15 @@ public class WorkerController {
 	@Autowired
 	private  WorkerMapper mapper;
 	
+	@Operation(summary = "Realiza inserção de funcionários", method = "POST")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Inserção realizada com sucesso"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor")
+			
+	})
 	@PostMapping
 	public ResponseEntity<WorkerResponse> save(@RequestBody WorkerRequest workerRequest){
 		Worker worker = mapper.toWorker(workerRequest);
@@ -39,12 +55,32 @@ public class WorkerController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(workerResponse);
 	}
 	
+	@Operation(summary = "Realiza busca de todos os funcionários cadastrados", method = "GET")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Busca realizada com sucesso"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor")
+			
+	})
+	
 	@GetMapping
 	public ResponseEntity<List<WorkerResponse>> findAll(){
 		List<Worker> list = service.findAll();
 		List<WorkerResponse> listResponse = mapper.toWorkerResponseList(list);
 		return ResponseEntity.status(HttpStatus.FOUND).body(listResponse);
 	}
+	
+	@Operation(summary = "Realiza busca de um funcionário através do ID", method = "GET")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Busca realizada com sucesso"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor")
+			
+	})
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<WorkerResponse> findById(@PathVariable Long id){
@@ -57,6 +93,16 @@ public class WorkerController {
 		}
 		
 	}
+	
+	@Operation(summary = "Realiza atualização dos dados de um funcionário através do ID", method = "PUT")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Atualização realizada com sucesso"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor")
+			
+	})
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<WorkerResponse> update(@RequestBody WorkerRequest workerUpdated, @PathVariable Long id){
@@ -71,6 +117,16 @@ public class WorkerController {
 		}
 		
 	}
+	
+	@Operation(summary = "Realiza deleção de um funcionário através do ID", method = "DELETE")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Deleção realizada com sucesso"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor"),
+			
+	})
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id){
