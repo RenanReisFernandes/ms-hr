@@ -28,8 +28,8 @@ public class Worker implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String agency;
-	private String account;
+	private Long agency;
+	private Long account;
 	private String cpf;
 	private String name;
 	private String address;

@@ -33,8 +33,8 @@ class WorkerServiceTest {
         worker.setName("John Doe");
         worker.setCpf("12345678900");
         worker.setAddress("123 Street");
-        worker.setAgency("Agency");
-        worker.setAccount("Account");
+        worker.setAgency(333L);
+        worker.setAccount(23L);
         worker.setDailyIncome(100.0);
     }
 
@@ -99,8 +99,8 @@ class WorkerServiceTest {
         updatedWorker.setName("Jane Doe");
         updatedWorker.setCpf("09876543211");
         updatedWorker.setAddress("456 Avenue");
-        updatedWorker.setAgency("New Agency");
-        updatedWorker.setAccount("New Account");
+        updatedWorker.setAgency(333L);
+        updatedWorker.setAccount(23L);
         updatedWorker.setDailyIncome(150.0);
 
         Worker result = service.update(updatedWorker, 1L);
