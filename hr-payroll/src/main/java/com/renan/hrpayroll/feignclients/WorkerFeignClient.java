@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.renan.hrpayroll.feignclients.DTO.response.WorkerResponse;
+import com.renan.hrpayroll.dto.response.WorkerResponse;
 
 
 @Component

@@ -1,4 +1,4 @@
-package com.renan.hrpayroll.feignclients.DTO.response;
+package com.renan.hrpayroll.dto.response;
 
 import java.io.Serializable;
 

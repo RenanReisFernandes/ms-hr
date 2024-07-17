@@ -7,9 +7,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
-@EnableFeignClients
+
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "API PAYROLL", version = "1.0.0", description = "API de controle de pagamentos"))
+@EnableFeignClients
 public class HrPayrollApplication {
 
 	public static void main(String[] args) {
