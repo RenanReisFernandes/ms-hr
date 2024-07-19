@@ -1,0 +1,3 @@
+swagger-worker:  http://localhost:8001/swagger-ui/index.html
+
+swagger-payroll: http://localhost:8101/swagger-ui/index.html
