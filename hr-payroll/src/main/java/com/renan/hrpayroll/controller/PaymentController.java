@@ -18,22 +18,23 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RestController
 @RequestMapping(value = "/payments")
 public class PaymentController {
-    
-    @Autowired
-    private PaymentService service;
-    
-    @Operation(summary = "Realiza chamada do valor do pagamento pelo funcionário/dias/valor da diária", method = "GET")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Busca valores de pagamentos"),
-        @ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
-        @ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
-        @ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
-        @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    })
-    
-    @GetMapping(value = "/{workerId}/dias/{dias}")
-    public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer dias) {
-        Payment payment = service.getPayment(workerId, dias);
-        return ResponseEntity.status(HttpStatus.OK).body(payment);
-    }
+	@Autowired
+	private PaymentService service;
+	
+	@Operation(summary = "Realiza chamada do valor do pagamento pelo funcionário/dias/valor da diária", method = "GET")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Busca valores de pagamentos"),
+			@ApiResponse(responseCode = "422", description = "Dados de requisição inválidos"),
+			@ApiResponse(responseCode = "400", description = "Parâmetros inválidos"),
+			@ApiResponse(responseCode = "401", description = "Usuário não encontrado"),
+			@ApiResponse(responseCode = "500", description = "Erro de servidor")
+			
+	})
+	
+	@GetMapping(value = "/{workerId}/dias/{dias}")
+	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer dias){
+		Payment payment = service.getPayment(workerId, dias);
+		return ResponseEntity.status(HttpStatus.FOUND).body(payment);
+	}
+
 }

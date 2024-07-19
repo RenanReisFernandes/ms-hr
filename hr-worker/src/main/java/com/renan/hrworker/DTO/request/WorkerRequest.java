@@ -3,11 +3,10 @@ package com.renan.hrworker.DTO.request;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotBlank;
-
 import org.hibernate.validator.constraints.br.CPF;
 
-import io.micrometer.core.lang.NonNull;
+import io.micrometer.common.lang.NonNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
