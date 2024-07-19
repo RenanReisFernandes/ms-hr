@@ -47,6 +47,11 @@ $ mvn spring-boot:run
 - **hr-worker**: http://localhost:8001/worker
 - **hr-payroll**: http://localhost:8080/payments
 
+#### LINKS PARA ACESSO DO SWAGGER
+-[SWAGGER FUNCIONÁRIOS](http://localhost:8001/swagger-ui/index.html)
+
+-[SWAGGER PAGAMENTOS](http://localhost:8101/swagger-ui/index.html)
+
 #### IMAGENS ILUSTRATIVAS SWAGGER
 <p>
  <img src ="hr-payroll\src\main\java\assets\imagens-microservicos\img-swagger-worker.PNG">
