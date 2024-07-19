@@ -21,7 +21,7 @@
 - [**SWAGGER**](https://swagger.io/docs/)
 - [**POSTMAN**](https://learning.postman.com/docs/introduction/overview/)
 
-### 🦾
+### 🦾 INSTALANDO O PROJETO NA SUA MÁQUINA
 ```
 # CLONE O PROJETO
 $ git clone https://github.com/seu-usuario/seu-repositorio.git
