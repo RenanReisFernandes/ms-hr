@@ -1,36 +1,24 @@
-
-package com.renan.hrworker.DTO.request;
+package com.renan.hrpayroll.dto.response;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.validator.constraints.br.CPF;
-
-import io.micrometer.core.lang.NonNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class WorkerRequest implements Serializable {
+public class WorkerResponse implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@NotBlank
+	private Long id;
 	private String name;
-	@NotBlank
-	private String address;
-	@NonNull
-	@CPF
 	private String cpf;
+	private String address;
 	private Double dailyIncome;
-
 }
-
