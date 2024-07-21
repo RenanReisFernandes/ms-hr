@@ -47,12 +47,12 @@ $ mvn spring-boot:run
 - **hr-worker**: http://localhost:8001/worker
 - **hr-payroll**: http://localhost:8080/payments
 
-#### LINKS PARA ACESSO DO SWAGGER
+#### 🔗 LINKS PARA ACESSO DO SWAGGER
 -[SWAGGER FUNCIONÁRIOS](http://localhost:8001/swagger-ui/index.html)
 
 -[SWAGGER PAGAMENTOS](http://localhost:8101/swagger-ui/index.html)
 
-#### IMAGENS ILUSTRATIVAS SWAGGER
+#### 📃 IMAGENS ILUSTRATIVAS SWAGGER
 <p>
  <img src ="hr-payroll\src\main\java\assets\imagens-microservicos\img-swagger-worker.PNG">
  </p><br>
@@ -82,42 +82,49 @@ Employee Microservice (hr-worker): Manages employee information, including ID, a
 
 HR Microservice (hr-payroll): Queries the employee microservice to retrieve specific employee data and calculates the earnings based on daily income and the number of working days.
 
-🔨 TOOLS USED
-JAVA
-SPRING BOOT
-SPRING SECURITY
-SPRING CLOUD
-GIT
-GITHUB
-H2
-SWAGGER
-POSTMAN
-🦾 INSTALLING THE PROJECT ON YOUR MACHINE
-shell
-Copiar código
+### 🔨 TOOLS USED
+- [**JAVA**](https://docs.oracle.com/en/java/)
+- [**SPRING BOOT**](https://docs.spring.io/spring-boot/index.html)
+- [**SPRING SECURITY**](https://docs.spring.io/spring-security/reference/index.html)
+- [**SPRING CLOUD**](https://spring.io/projects/spring-cloud)
+- [**GIT**](https://git-scm.com/doc)
+- [**GITHUB**](https://docs.github.com/pt)
+- [**H2**](https://www.h2database.com/html/main.html)
+- [**SWAGGER**](https://swagger.io/docs/)
+- [**POSTMAN**](https://learning.postman.com/docs/introduction/overview/)
+
+### 🦾 INSTALLING THE PROJECT ON YOUR MACHINE
+```
 # CLONE THE PROJECT
-$ git clone https://github.com/your-username/your-repository.git
-graphql
-Copiar código
+$ git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+```
 # INSTALL DEPENDENCIES WITH YOUR IDE IN THE PROMPT USE THE COMMAND (IF YOU USE NPM)
 $ npm install
-graphql
-Copiar código
+```
+
+```
 # INSTALL DEPENDENCIES WITH YOUR IDE IN THE PROMPT USE THE COMMAND (IF YOU USE YARN)
 $ yarn
-ruby
-Copiar código
+```
+
+```
 # RUN THE MICROSERVICES
 $ mvn spring-boot:run
-👁‍🗨 THE MICROSERVICES WILL BE AVAILABLE AT THE FOLLOWING URLS
-hr-worker: http://localhost:8001/worker
-hr-payroll: http://localhost:8080/payments
-SWAGGER ACCESS LINKS
-EMPLOYEE SWAGGER
+```
 
-PAYROLL SWAGGER
 
-SWAGGER ILLUSTRATIVE IMAGES
+### 👁‍🗨 THE MICROSERVICES WILL BE AVAILABLE AT THE FOLLOWING URLS
+- **hr-worker**: http://localhost:8001/worker
+- **hr-payroll**: http://localhost:8080/payments
+
+### 🔗 SWAGGER ACCESS LINKS
+-[SWAGGER FUNCIONÁRIOS](http://localhost:8001/swagger-ui/index.html)
+
+-[SWAGGER PAGAMENTOS](http://localhost:8101/swagger-ui/index.html)
+
+### 📃 SWAGGER ILLUSTRATIVE IMAGES
 <p>
  <img src="hr-payroll/src/main/java/assets/imagens-microservicos/img-swagger-worker.PNG">
  </p><br>
@@ -127,8 +134,10 @@ SWAGGER ILLUSTRATIVE IMAGES
  <p>
  <img src="hr-payroll/src/main/java/assets/imagens-microservicos/img-postman.PNG">
  </p>
-🚀 NEXT STEPS
-IMPLEMENTATION OF AUTHENTICATION AND AUTHORIZATION
-SERVER CONFIGURATION
-LOAD BALANCING
-GATEWAY IMPLEMENTATION
+
+### 🚀 NEXT STEPS
+- IMPLEMENTATION OF AUTHENTICATION
+- AUTHORIZATION
+- SERVER CONFIGURATION
+- LOAD BALANCING
+- GATEWAY IMPLEMENTATION
